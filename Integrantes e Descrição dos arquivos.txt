@@ -1,0 +1,76 @@
+-------------------------------------------------------------
+UFSCar - UNIVERSIDADE FEDERAL DE SÃO CARLOS - Campus Sorocaba
+-------------------------------------------------------------
+
+Sistemas Distribuídos - Projeto de Sistemas Distribuídos
+Prof. Dr. Fábio Luciano Verdi
+
+Alunos:
+	408093 - Giulianno Raphael Sbrugnera 
+	408611 - Igor Felipe Ferreira Ceridorio
+
+Objetivo - Desenvolvimento de um protótipo que permite o upload e download de vídeos privados para um sistema web.
+
+-------------------------------------------------------------
+
+DESCRIÇÃO DOS ARQUIVOS ENTREGUES
+
+***Diretório Bibliotecas:***
+
+Contém todas as bibliotecas de terceiros que foram utilizadas no projeto.
+Conjunto de bibliotecas Apache Commons (http://commons.apache.org/) utilizadas para manipulação de arquivos do FrontEnd (Cliente Web). 
+API do mongoDB para Java, utilizada no servidor RMI para realizar a conexão com o banco de dados.
+
+Arquivos:
+	- commons-codec-1.10.jar
+	- commons-fileupload-1.3.1.jar
+	- commons-io-2.4.jar
+	- mongo-2.10.1.jar
+
+***Diretório ClienteRMI (WS):***
+
+Contém a implementação do WS que faz o papel de Cliente do RMI no arquivo RMICliente.java.
+Código fonte da definição de uma classe Video.java que foi utilizada no projeto para passar objetos de vídeo com todas as suas informações como parâmetro.
+Contém o arquivo RMICliente.wsdl que é o WSDL gerado para o WS criado e o arquivo RMIClient_schema1.xsd que é o esquema criado para este WS.
+
+Arquivos:
+	- RMICliente.java
+	- Video.java
+	- RMICliente.wsdl
+	- RMICliente_schema1.xsd
+
+***Diretório FrontEnd:***
+
+Contém a implementação da interface de usuário para o cliente Web.
+Composta de três arquivos .jsp, sendo o index.jsp (principal) e o resultDownload.jsp e resultUpload.jsp que são redirecionados pelo index.jsp para os casos específicos de Download ou Upload de vídeos.
+Contém ainda mais três diretórios - css, fonts e js - que contém os arquivos utilizados para auxílio na implementação da interface de usuário.
+
+Arquivos:
+	- css
+	- fonts
+	- js
+	- index.jsp
+	- resultDownload.jsp
+	- resultUpload.jsp
+
+***Diretório InterfaceRMI:***
+
+Contém a implementação da interface RMI utilizada no projeto.
+
+Arquivos:
+	- RMIUploadDownload.java
+
+***Diretório ServidorRMI:***
+
+Contém a implementação do servidor RMI que se conecta ao mongoDB pela API e realiza e inserção e recuperação de vídeos do banco de dados.
+	- RMIServidor.java
+
+***Diretório GoogleAppEngine:***
+
+Contém a implementação de dois servlets que cuidam das requisições provenientes do ClienteRMI (WS). Suas funcionalidades são tornar o nome e a descrição do vídeo persistentes, gerando um identificador único para cada realização dessa operação, e retornar estes dados, dado um identificador.
+
+Arquivos:
+	- Video.java
+	- PMF.java
+	- Download.java
+	- Upload.java
